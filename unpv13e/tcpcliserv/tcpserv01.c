@@ -15,9 +15,9 @@ main(int argc, char **argv)
 	servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
 	servaddr.sin_port        = htons(SERV_PORT);
 
-	Bind(listenfd, (SA *) &servaddr, sizeof(servaddr));
+	bind(listenfd, (SA *) &servaddr, sizeof(servaddr));
 
-	Listen(listenfd, LISTENQ);
+	listen(listenfd, LISTENQ);
 
 	for ( ; ; ) {
 		clilen = sizeof(cliaddr);
